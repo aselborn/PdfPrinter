@@ -10,6 +10,10 @@ namespace PdfPrinter.Models
 {
     public class DeviceContext : DbContext
     {
+        public DeviceContext()
+        {
+            Database.SetInitializer<DeviceContext>(null);
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             var sqliteConnectionInitializer = new SqliteCreateDatabaseIfNotExists<DeviceContext>(modelBuilder);
@@ -19,6 +23,8 @@ namespace PdfPrinter.Models
         }
 
         public DbSet<Appartment> AppartmentObject { get; set; }
+        public DbSet<Renter> RenterObject { get; set; }
 
+        public DbSet<Fastighet> FastighetObject { get; set; }
     }
 }

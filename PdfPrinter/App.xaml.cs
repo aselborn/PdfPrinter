@@ -21,6 +21,9 @@ namespace PdfPrinter
                 Title = "PdfPrinter"
             };
 
+            
+            
+
             window.Show();
 
         }

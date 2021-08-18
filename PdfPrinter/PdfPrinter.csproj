@@ -24,7 +24,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>D:\output\exe\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -91,11 +91,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="datasetPaySlip.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>datasetPaySlip.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Models\Appartment.cs" />
     <Compile Include="Models\DbApi.cs" />
     <Compile Include="Models\DeviceContext.cs" />
+    <Compile Include="Models\Fastighet.cs" />
     <Compile Include="Models\PaySlipMock.cs" />
+    <Compile Include="Models\Renter.cs" />
     <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="ViewModels\FastigheterViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -122,7 +130,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="ReportSlip.rdlc" />
+    <EmbeddedResource Include="Report1.rdlc" />
+    <None Include="datasetPaySlip.xsc">
+      <DependentUpon>datasetPaySlip.xsd</DependentUpon>
+    </None>
+    <None Include="datasetPaySlip.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>datasetPaySlip.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasetPaySlip.xss">
+      <DependentUpon>datasetPaySlip.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

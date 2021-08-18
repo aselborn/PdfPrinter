@@ -9,19 +9,35 @@
     <Grid>
         
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="200" />
             <ColumnDefinition Width="50" />
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" />
+            <RowDefinition Height="70" />
             <RowDefinition Height="50" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
+        
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="5, 4, 5, 0" Orientation="Vertical">
+            <Label Content="Välj fastighet" />
+            <ComboBox Name="cboFastighet" 
+                  HorizontalAlignment="Left"
+                  Width="150" Height="30"
+                  
+                  SelectedItem="{Binding SelectedFastighet}"
+                  ItemsSource="{Binding FastighetItems}"
+                  
+                  />
+
+        </StackPanel>
+
         <Button Grid.Column="0" Grid.Row="1" 
                 Command="{Binding PrintPdf}"
                 Content="Print"/>
+
+
 
     </Grid>
 </Window>

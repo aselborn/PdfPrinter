@@ -18,6 +18,10 @@ namespace PdfPrinter.Models
     {
         private ArrayList _appartmentList = new ArrayList();
         private int _appartmentId;
+        private int _fastighetId;
+
+        public Fastighet Fastighet { get; set; }
+
 
         public IEnumerator GetEnumerator()
         {
@@ -27,6 +31,7 @@ namespace PdfPrinter.Models
         public Appartment this[int index] => (Appartment) _appartmentList[index];
 
         [XmlElement]
+        [Required]
         [Key]
         public int AppartmentId
         {
@@ -51,6 +56,31 @@ namespace PdfPrinter.Models
             }
         }
 
+        [XmlElement]
+        private double _appartmentRent;
+
+        public double AppartmentRent
+        {
+            get => _appartmentRent;
+            set
+            {
+                _appartmentRent = value;
+                NotifyPropertyChanged(nameof(AppartmentRent));
+            }
+        }
+
+        [XmlElement]
+        [Required]
+        [ForeignKey("Fastighet")]
+        public int FastighetId
+        {
+            get => _fastighetId;
+            set
+            {
+                _fastighetId = value;
+                NotifyPropertyChanged(nameof(FastighetId));
+            }
+        }
 
         public void Add(Appartment app)
         {

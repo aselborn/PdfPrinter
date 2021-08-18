@@ -22,5 +22,16 @@ namespace PdfPrinter.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Dsn=payslip;database=D:\\output\\exe\\DB\\payslip.db;stepapi=0;notxn=0;shortnames=0;l" +
+            "ongnames=0;nocreat=0;nowchar=0;fksupport=0;oemcp=0;bigint=0;jdconv=0")]
+        public string conPaySlip {
+            get {
+                return ((string)(this["conPaySlip"]));
+            }
+        }
     }
 }
